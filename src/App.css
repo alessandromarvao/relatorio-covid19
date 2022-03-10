@@ -1,38 +1,123 @@
-.App {
-  text-align: center;
+body {
+  margin: 0;
+  background-color: #F5F5F5;
+  background-image: url('./assets/pexels-cdc-3992933.png');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.App-logo {
-  height: 40vmin;
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+header {
+  width: 100%;
+  font-size: 120%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #E0E0E0;
+}
+
+header h1 {
+  text-decoration: none;
+  color: #282828;
+  font-family: sans-serif;
+}
+
+header a {
+  text-decoration: none;
+  color: #282828;
+  font-family: sans-serif;
+}
+
+header a:hover {
+  color: #909090;
+}
+
+.form {
+  position: relative;
+  display: flex;
+  width: 20em;
+  height: 3em;
+  border-radius: .25em;
+  overflow: hidden;
+  margin-top: 100px;
+  font-size: 120%;
+}
+
+.form::after {
+  content: '\25be';
+  position: absolute;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-bottom: 2px;
+  top: 0;
+  right: 0;
+  background-color: #C0C0C0;
+  transition: .25s all ease;
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+.form select {
+  margin-left: 10px;
+  height: 25px;
+  width: 200px;
+  border-radius: 5px;
+  /* Reset Select */
+  appearance: none;
+  outline: 0;
+  border: 0;
+  box-shadow: none;
+  /* Personalize */
+  flex: 1;
+  padding: 0 1em;
+  color: #282828;
+  background-color: #DCDCDC;
+  background-image: none;
+  cursor: pointer;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* Remove IE arrow */
+.form select::-ms-expand {
+  display: none;
 }
 
-.App-link {
-  color: #61dafb;
+.tabela {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 50px;
+  padding-right: 80px;
+  border-radius: 5px;
+  background: rgba(229, 231, 233, .7);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.tabela h2 {
+  padding-left: 25px;
+}
+
+.tabela table {
+  padding-bottom: 30px;
+}
+
+.tabela table tr th {
+  text-align: right;
+  padding-right: 50px;
+  padding-top: 10px;
+}
+
+.tabela table tr td {
+  text-align: right;
+  padding-top: 10px;
+}
+
+.tabela small{
+  padding-left: 25px;
 }
