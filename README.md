@@ -2,6 +2,8 @@
 
 Página de exibição de dados da Covid-19 a partir de uma consulta à API Covid19 Brazil API (<https://covid19-brazil-api-docs.vercel.app/>).
 
+O link para exibição da página em tempo real: (<https://relatorio-covid19-br.netlify.app/>)
+
 A aplicação foi desenvolvida em ReactJs. Para começar a utilizar o ReactJs, você precisa ter o Node.js instalado. Node inclui o npm (o gerenciador de pacotes node), e o npx (o executador de pacotes do node).
 
 ## Installation
