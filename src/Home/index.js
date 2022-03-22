@@ -11,14 +11,14 @@ export function Home() {
     /// Carrega os dados recebidos da API e retorna o array para a nossa página (componentDidMount)
     useEffect(() => {
 
-        async function loadApi() {
+        async function onLoad() {
             const response = await api.get('api/report/v1');
 
             // O retorno JSON está encapsulado em outra tag data, além do root data.
             setJson(response.data.data);
         };
 
-        loadApi();
+        onLoad();
     }, []);
 
     /// Função ativada quando o `estado` for alterado
@@ -26,7 +26,9 @@ export function Home() {
 
         // Percorre o array de 
         if (estado !== '') {
+
             setBool(true); // Valor do booleano verdadeiro pra informar que um estado foi selecionado
+
             for (let i = 0; i < json.length; i++) {
                 if (json[i].uf === estado) {
                     setDados(json[i]);
@@ -40,8 +42,8 @@ export function Home() {
 
     /// recebe o valor atual do campo select e armazena na state `uf`
     const handleChange = (event) => {
-        let resultado = event.currentTarget;
-        setEstado(resultado.value);
+        let resultado = event.currentTarget.value;
+        setEstado(resultado);
     }
 
 
@@ -66,8 +68,9 @@ export function Home() {
                 </select>
             </div>
 
-            { //Confere se foi selecionado algum estado do select e exibe as informações referentes ao estado selecionado 
-                (bool) &&
+            { 
+                (bool) && 
+                //Confere se foi selecionado algum estado do select e exibe as informações referentes ao estado selecionado 
                 <div className="tabela">
                     <h2>{dados.state}</h2>
                     <table>
@@ -99,7 +102,11 @@ export function Home() {
                             </tr>
                         </tbody>
                     </table>
-                    <small>Dados: <a href='https://covid19-brazil-api-docs.vercel.app/' target='_blank' rel="noopener noreferrer">Covid 19 Brazil API </a></small>
+                    <small>
+                        Dados: <a href='https://covid19-brazil-api-docs.vercel.app/' target='_blank' rel="noopener noreferrer">Covid 19 Brazil API </a>
+                    </small>
+                    <hr/>
+                    <small>Desenvolvido por Alessandro Marvão</small>
                 </div>
             }
         </div>
